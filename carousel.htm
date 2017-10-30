@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.swiper{
+		    width:1080px;
+		    height:200px;
+		    overflow:hidden;
+		    white-space:nowrap;
+		    line-height: 0;
+		    font-size:0; /*去除img标签之间空隙*/
+		    position:relative;
+		    left:-10px;
+		    background: orange;
+		}
+		.swiper-item{
+		    width:200px;
+		    height:200px;
+		    transition-timing-function:cubic-bezier(.61,.05,.27,.99);
+		    transform-origin: 0% 50%;
+		}
+	</style>
+</head>
+<body>
+	<div id="swiper"></div>
+	<button class="start-button">start</button>
+	<script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+	<script src="carousel.js"></script>
+</body>
+</html>
