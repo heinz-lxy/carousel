@@ -10,15 +10,18 @@ define(function(){
 		}
 		return temp;
 	}
-	personArray = personArray.repeat(45);
 	var personNumber = personArray.length;
+	if(personNumber < 45){
+		personArray = personArray.repeat(Math.ceil(45/personNumber));
+	}
+	personNumber = personArray.length;
 	var stopCallback = function(){
 		$(".brake-btn").addClass("start-btn").removeClass("brake-btn");
 		 $("#music")[0].pause();
 	};
 
 	var carousel = {
-		// elem: $("#swiper"),
+		elem: null,
 		count: 0, //转动过的次数
 		shiftNo: 0,
 		allowStop: false,
@@ -115,11 +118,9 @@ define(function(){
 				var target = $(e.target);
 				if(target.hasClass("start-btn")){
 					that.start();
-					console.log("start")
 					target.addClass("stop-btn").removeClass("start-btn");
 				}else if(target.hasClass("stop-btn")){
 					that.stop();
-					console.log("stop")
 					target.addClass("brake-btn").removeClass("stop-btn");
 				}
 				
@@ -132,8 +133,11 @@ define(function(){
 			    for(var i = 0;i < 45;i ++){
 			        htmlStr += "<img class='swiper-item' src='"+personArray[i].image+"'></img>";
 			    }
-			    // this.elem
-			    $("#swiper").append(htmlStr);
+			    var swiper = $('<div id="swiper" class="swiper"> <span class="ctrl-btn start-btn"></span> </div>');
+			    var music = $('<audio src="https://testt2.wmnetwork.cc/static/conference/luckdraw/lottery.mp3" id="music" style="display: none;" loop="loop"></audio>');
+			    swiper.append(htmlStr);
+			    $("body").append(swiper);
+			    $("body").append(music);
 			    this.shift();
 			}
 			this.events();

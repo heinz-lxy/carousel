@@ -23,6 +23,7 @@
     position: absolute;
     bottom:20px;
     left:450px;
+    cursor:pointer;
 }
 .start-btn{
     background: url("https://res.wmnetwork.cc/static/conference/luckdraw/images/btn_contro_start.png") no-repeat;
