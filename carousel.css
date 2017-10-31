@@ -18,7 +18,21 @@
 }
 .ctrl-btn{
     display: block;
+    width: 144px;
+    height: 59px;
     position: absolute;
     bottom:20px;
-    left:505px;
+    left:450px;
+}
+.start-btn{
+    background: url("https://res.wmnetwork.cc/static/conference/luckdraw/images/btn_contro_start.png") no-repeat;
+    background-size: 144px 59px;
+}
+.stop-btn{
+    background: url("https://testt2.wmnetwork.cc/static/conference/luckdraw/images/btn_contro_stop.png") no-repeat;
+    background-size: 144px 59px;
+}
+.brake-btn{
+    background: url("https://testt2.wmnetwork.cc/static/conference/luckdraw/images/slowdownButton.png") no-repeat;
+    background-size: 144px 59px;
 }
