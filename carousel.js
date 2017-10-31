@@ -6,7 +6,9 @@ var cssArray = new Array(15);
 var allowStop = false;
 var stopFlag = false; //停止的标志
 var changeFlag = false; //图片更换的标志
-var personArray = [{image: "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"}];
+var personArray = [{image: "https://avatars1.githubusercontent.com/u/13199456?s=460&v=4"}, 
+{image: "https://img2.wmnetwork.cc/attachment/weibo/thumb/avatar/201710/24/f1ad5ed90cb2ec793f2465ce94ad41a2.jpg"},
+{image: "https://img2.wmnetwork.cc/attachment/weibo/thumb/avatar/201710/26/723a4d86fecd1a0d2d2ee3b9a90d39bd.jpg"}];
 //计算视野内15张图片的css
 for(var i=0,pos=0;i<15;i++){  
     var d = Math.abs(i-7);
@@ -33,7 +35,7 @@ Array.prototype.repeat = function(n){
 	return temp;
 }
 personArray = personArray.repeat(45);
-var personNumber = 45;
+var personNumber = personArray.length;
 
 
 function shift(){
@@ -60,7 +62,7 @@ function shift(){
 }
 
 function stopCallback(){
-    // $(".slowdownButton").addClass("start-button").removeClass("slowdownButton");
+    // $(".slowdownButton").addClass("start-btn").removeClass("slowdownButton");
 }
 
 function run(speed,callback){
@@ -112,12 +114,12 @@ function stop(){
 function events(){
 	$("body").on("click", function(e){
 		var target = $(e.target);
-		if(target.hasClass("start-button")){
+		if(target.hasClass("start-btn")){
 			start();
-			target.addClass("stop-button").removeClass("start-button").text("stop");
-		}else if(target.hasClass("stop-button")){
+			target.addClass("stop-btn").removeClass("start-btn").text("stop");
+		}else if(target.hasClass("stop-btn")){
 			stop();
-			target.addClass("start-button").removeClass("stop-button").text("start");
+			target.addClass("start-btn").removeClass("stop-btn").text("start");
 		}
 		
 	});
